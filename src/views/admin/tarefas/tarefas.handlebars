@@ -1,0 +1,41 @@
+<main>
+  <div class="p-5 mb-4 bg-light rounded-3">
+    <div class="container-fluid py-5">
+      <h2>Lista de Tarefas</h2>
+      <hr>
+
+      <!-- Botão para criar nova tarefa -->
+      <a href="/rota_tarefas/tarefas/add">
+        <button class="btn btn-success">Nova Tarefa</button>
+      </a>
+
+      <!-- Loop para exibir cada tarefa -->
+      {{#each tarefas}}
+        <div class="card mt-4">
+          <div class="card-body">
+
+            <h4><b>ID:</b> {{_id}}</h4>
+            <small><b>Nome:</b> {{nome}}</small><br>
+            <small><b>Descrição:</b> {{descricao}}</small><br><br>
+
+            <!-- Botão para editar tarefa -->
+            <a href="/rota_tarefas/editar_tarefas/{{_id}}">
+              <button class="btn btn-success mt-3">
+                Editar Tarefa
+              </button>
+            </a>
+
+            <!-- Botão para deletar tarefa -->
+            <a href="/rota_tarefas/deletar_tarefas/{{_id}}">
+              <button class="btn btn-danger mt-3">
+                Deletar Tarefa
+              </button>
+            </a>
+
+          </div>
+        </div>
+      {{/each}}
+
+    </div>
+  </div>
+</main>
